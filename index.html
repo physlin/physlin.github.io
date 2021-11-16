@@ -3,9 +3,9 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Usage &amp; About" href="usage.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Using Detectorcal" href="usage.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+    <meta name="generator" content="sphinx-4.3.0, furo 2021.10.09"/>
         <title>detectorcal 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
@@ -155,10 +155,10 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage &amp; About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.fit.html">detectorcal.fit: Fitting coefficients to calibrate detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.correct.html">detectorcal.correct: Correction of image using fitted coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.plot.html">detectorcal.plot: Plotting the detector calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Detectorcal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.fit.html">detectorcal.fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.correct.html">detectorcal.correct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.plot.html">detectorcal.plot</a></li>
 </ul>
 
 </div>
@@ -190,12 +190,19 @@
 <p>Python package for detector calibration. The algorithm was initially developed for the correction of CT ring artifacts (Croton et al., 2019) but can be used for correcting data produced by other types of detectors.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This project is under active development.</p>
+<p>We welcome community contributions. If you have any bug fixes or ideas please raise an issue and create a linked pull request. Pull requests will be reviewed by the package maintainers.</p>
 </div>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>detectorcal can be found on the Python Package Index (PyPI) and can be installed using pip using the following command:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip install detectorcal
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>CPU only version
+<span class="gp">$ </span>pip install detectorcal
+
+<span class="gp"># </span>GPU version
+<span class="gp">$ </span>pip install detectorcal<span class="o">[</span>gpu<span class="o">]</span>
+
+<span class="gp"># </span>with testing suite
+<span class="gp">$ </span>pip install detectorcal<span class="o">[</span>testing<span class="o">]</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -213,15 +220,17 @@
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage &amp; About</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using Detectorcal</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#about-detectorcal">About detectorcal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#usage">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#step-1-fit">Step 1: Fit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage.html#step-2-correct">Step 2: Correct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#correcting-large-arrays">Correcting Large Arrays</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.fit.html">detectorcal.fit: Fitting coefficients to calibrate detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.correct.html">detectorcal.correct: Correction of image using fitted coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.plot.html">detectorcal.plot: Plotting the detector calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.fit.html">detectorcal.fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.correct.html">detectorcal.correct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/detectorcal.plot.html">detectorcal.plot</a></li>
 </ul>
 </div>
 </section>
@@ -237,7 +246,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Usage &amp; About</div>
+                <div class="title">Using Detectorcal</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="detectorcal.correct: Correction of image using fitted coefficients" href="detectorcal.correct.html" /><link rel="prev" title="&lt;no title&gt;" href="api.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="detectorcal.correct" href="detectorcal.correct.html" /><link rel="prev" title="&lt;no title&gt;" href="api.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
-        <title>detectorcal.fit: Fitting coefficients to calibrate detector - detectorcal 0.0.1 documentation</title>
+    <meta name="generator" content="sphinx-4.3.0, furo 2021.10.09"/>
+        <title>detectorcal.fit - detectorcal 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -155,10 +155,10 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage &amp; About</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">detectorcal.fit: Fitting coefficients to calibrate detector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detectorcal.correct.html">detectorcal.correct: Correction of image using fitted coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detectorcal.plot.html">detectorcal.plot: Plotting the detector calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Detectorcal</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">detectorcal.fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectorcal.correct.html">detectorcal.correct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectorcal.plot.html">detectorcal.plot</a></li>
 </ul>
 
 </div>
@@ -186,7 +186,7 @@
         </div>
         <article role="main">
           <section id="module-detectorcal.fit">
-<span id="detectorcal-fit-fitting-coefficients-to-calibrate-detector"></span><h1>detectorcal.fit: Fitting coefficients to calibrate detector<a class="headerlink" href="#module-detectorcal.fit" title="Permalink to this headline">¶</a></h1>
+<span id="detectorcal-fit"></span><h1>detectorcal.fit<a class="headerlink" href="#module-detectorcal.fit" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="detectorcal.fit.fit_pixel">
 <span class="sig-prename descclassname"><span class="pre">detectorcal.fit.</span></span><span class="sig-name descname"><span class="pre">fit_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectorcal.fit.fit_pixel" title="Permalink to this definition">¶</a></dt>
@@ -239,7 +239,8 @@ that can be used to map the</p>
 <dt><strong>dark: None or np.ndarray</strong></dt><dd><p>Default None. Array containing the dark current image or None.</p>
 </dd>
 <dt><strong>save_path: None or str</strong></dt><dd><p>Default None. Path to which the fit coefficients should be saved.
-If None, the coefficients will not be saved to disk.</p>
+If None, the coefficients will not be saved to disk. Please save as
+a tiff, hdf5, or zarr.</p>
 </dd>
 <dt><strong>sigma: scalar</strong></dt><dd><p>Default 50. Standard deviation of the Gaussian kernel to be used for 
 smoothing</p>
@@ -284,7 +285,7 @@ pp.14231-14245.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="detectorcal.fit.gaussian_smooth">
-<span class="sig-prename descclassname"><span class="pre">detectorcal.fit.</span></span><span class="sig-name descname"><span class="pre">gaussian_smooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dask.array.core.Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truncate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectorcal.fit.gaussian_smooth" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">detectorcal.fit.</span></span><span class="sig-name descname"><span class="pre">gaussian_smooth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dask.array.core.Array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truncate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectorcal.fit.gaussian_smooth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply a 2D Gaussian filter to slices of a 3D volume using dask. 
 Facilitates dask-mediated parallelisation and has optional
 GPU acceleration.</p>
@@ -331,7 +332,7 @@ numba accelerated nested for loop.</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="detectorcal.fit.sequential_gauss">
-<span class="sig-prename descclassname"><span class="pre">detectorcal.fit.</span></span><span class="sig-name descname"><span class="pre">sequential_gauss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truncate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectorcal.fit.sequential_gauss" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">detectorcal.fit.</span></span><span class="sig-name descname"><span class="pre">sequential_gauss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truncate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectorcal.fit.sequential_gauss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply Gaussian smoothing to image planes in sequence.</p>
 </dd></dl>
 </section>
@@ -346,7 +347,7 @@ numba accelerated nested for loop.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">detectorcal.correct: Correction of image using fitted coefficients</div>
+                <div class="title">detectorcal.correct</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>

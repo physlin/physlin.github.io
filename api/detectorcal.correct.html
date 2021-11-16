@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="detectorcal.plot: Plotting the detector calibration" href="detectorcal.plot.html" /><link rel="prev" title="detectorcal.fit: Fitting coefficients to calibrate detector" href="detectorcal.fit.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="detectorcal.plot" href="detectorcal.plot.html" /><link rel="prev" title="detectorcal.fit" href="detectorcal.fit.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
-        <title>detectorcal.correct: Correction of image using fitted coefficients - detectorcal 0.0.1 documentation</title>
+    <meta name="generator" content="sphinx-4.3.0, furo 2021.10.09"/>
+        <title>detectorcal.correct - detectorcal 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -155,10 +155,10 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage &amp; About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detectorcal.fit.html">detectorcal.fit: Fitting coefficients to calibrate detector</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">detectorcal.correct: Correction of image using fitted coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detectorcal.plot.html">detectorcal.plot: Plotting the detector calibration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Using Detectorcal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectorcal.fit.html">detectorcal.fit</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">detectorcal.correct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectorcal.plot.html">detectorcal.plot</a></li>
 </ul>
 
 </div>
@@ -186,7 +186,7 @@
         </div>
         <article role="main">
           <section id="module-detectorcal.correct">
-<span id="detectorcal-correct-correction-of-image-using-fitted-coefficients"></span><h1>detectorcal.correct: Correction of image using fitted coefficients<a class="headerlink" href="#module-detectorcal.correct" title="Permalink to this headline">¶</a></h1>
+<span id="detectorcal-correct"></span><h1>detectorcal.correct<a class="headerlink" href="#module-detectorcal.correct" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="detectorcal.correct.correct_image">
 <span class="sig-prename descclassname"><span class="pre">detectorcal.correct.</span></span><span class="sig-name descname"><span class="pre">correct_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ct_volume</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dark</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_dask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truncate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectorcal.correct.correct_image" title="Permalink to this definition">¶</a></dt>
@@ -195,7 +195,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ct_volume: ndarray like</strong></dt><dd><p>CT image volume to be corrected. (n, y, x)</p>
+<dt><strong>ct_volume: np.ndarray or dask.array.Array</strong></dt><dd><p>CT image volume to be corrected. Note that if a dask array is 
+inputted, the use_dask flag will be inffered as True. (n, y, x)</p>
 </dd>
 <dt><strong>coefficients: ndarray like</strong></dt><dd><p>Linear coefficients for the detector. (y, x)</p>
 </dd>
@@ -205,7 +206,9 @@
 </dd>
 <dt><strong>sigma: None or scalar</strong></dt><dd><p>Number of standard deviations</p>
 </dd>
-<dt><strong>save_path: None or str</strong></dt><dd><p>Default None. Optional path to which to save output.</p>
+<dt><strong>save_path: None or str</strong></dt><dd><p>Default None. Optional path to which to save output.Please save as
+a tiff, hdf5, or zarr. If the output is expected to be larger than 
+RAM, please save as zarr or hdf5.</p>
 </dd>
 <dt><strong>use_dask: bool</strong></dt><dd><p>Defaut False. Should dask be used to support computation? Dask manages
 memory to allow for computation on larger images. Only set this to
@@ -234,7 +237,7 @@ to accelerate this?</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>corrected: np.array</dt><dd><p>Coefficient-corrected CT volume.</p>
+<dt>corrected: np.array or da.array.Array</dt><dd><p>Coefficient-corrected CT volume.</p>
 </dd>
 </dl>
 </dd>
@@ -286,7 +289,7 @@ smoothing.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>corrected: np.array</dt><dd><p>Coefficient-corrected CT volume.</p>
+<dt>corrected: da.core.Array</dt><dd><p>Coefficient-corrected CT volume.</p>
 </dd>
 </dl>
 </dd>
@@ -347,7 +350,7 @@ smoothing.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">detectorcal.plot: Plotting the detector calibration</div>
+                <div class="title">detectorcal.plot</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -358,7 +361,7 @@ smoothing.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">detectorcal.fit: Fitting coefficients to calibrate detector</div>
+                <div class="title">detectorcal.fit</div>
                 
               </div>
             </a>
