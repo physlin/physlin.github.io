@@ -13,7 +13,7 @@ pip install detectorcal
 
 
 # Build Docs
-# ----------
+# ---------- 
 make clean
 make html
 
