@@ -28,6 +28,8 @@ jobs:
           apt-get install -y git
           git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
           git update-index --chmod=+x docs/buildsite.sh
+          pip install detectorcal
+          pip install furo
         shell: bash
 
       - name: Run build script for Sphinx pages
